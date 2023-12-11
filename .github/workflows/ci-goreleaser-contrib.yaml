@@ -1,4 +1,4 @@
-name: Continuous Integration - GoReleaser
+name: Continuous Integration - GoReleaser - Contrib
 
 on:
   push:
