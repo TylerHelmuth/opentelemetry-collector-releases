@@ -1,5 +1,3 @@
-partial:
-  by: target
 project_name: opentelemetry-collector-releases
 env:
     - COSIGN_YES=true
