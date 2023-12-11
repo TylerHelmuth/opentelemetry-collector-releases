@@ -139,6 +139,8 @@ checksum:
 dockers:
     - goos: linux
       goarch: "386"
+      ids:
+        - otelcol
       dockerfile: distributions/otelcol/Dockerfile
       image_templates:
         - otel/opentelemetry-collector:{{ .Version }}-386
@@ -158,6 +160,8 @@ dockers:
       use: buildx
     - goos: linux
       goarch: amd64
+      ids:
+        - otelcol
       dockerfile: distributions/otelcol/Dockerfile
       image_templates:
         - otel/opentelemetry-collector:{{ .Version }}-amd64
@@ -178,6 +182,8 @@ dockers:
     - goos: linux
       goarch: arm
       goarm: "7"
+      ids:
+        - otelcol
       dockerfile: distributions/otelcol/Dockerfile
       image_templates:
         - otel/opentelemetry-collector:{{ .Version }}-armv7
@@ -197,6 +203,8 @@ dockers:
       use: buildx
     - goos: linux
       goarch: arm64
+      ids:
+        - otelcol
       dockerfile: distributions/otelcol/Dockerfile
       image_templates:
         - otel/opentelemetry-collector:{{ .Version }}-arm64
@@ -216,6 +224,8 @@ dockers:
       use: buildx
     - goos: linux
       goarch: ppc64le
+      ids:
+        - otelcol
       dockerfile: distributions/otelcol/Dockerfile
       image_templates:
         - otel/opentelemetry-collector:{{ .Version }}-ppc64le
@@ -235,6 +245,8 @@ dockers:
       use: buildx
     - goos: linux
       goarch: s390x
+      ids:
+        - otelcol
       dockerfile: distributions/otelcol/Dockerfile
       image_templates:
         - otel/opentelemetry-collector:{{ .Version }}-s390x
@@ -254,6 +266,8 @@ dockers:
       use: buildx
     - goos: linux
       goarch: "386"
+      ids:
+        - otelcol-contrib
       dockerfile: distributions/otelcol-contrib/Dockerfile
       image_templates:
         - otel/opentelemetry-collector-contrib:{{ .Version }}-386
@@ -273,6 +287,8 @@ dockers:
       use: buildx
     - goos: linux
       goarch: amd64
+      ids:
+        - otelcol-contrib
       dockerfile: distributions/otelcol-contrib/Dockerfile
       image_templates:
         - otel/opentelemetry-collector-contrib:{{ .Version }}-amd64
@@ -293,6 +309,8 @@ dockers:
     - goos: linux
       goarch: arm
       goarm: "7"
+      ids:
+        - otelcol-contrib
       dockerfile: distributions/otelcol-contrib/Dockerfile
       image_templates:
         - otel/opentelemetry-collector-contrib:{{ .Version }}-armv7
@@ -312,6 +330,8 @@ dockers:
       use: buildx
     - goos: linux
       goarch: arm64
+      ids:
+        - otelcol-contrib
       dockerfile: distributions/otelcol-contrib/Dockerfile
       image_templates:
         - otel/opentelemetry-collector-contrib:{{ .Version }}-arm64
@@ -331,6 +351,8 @@ dockers:
       use: buildx
     - goos: linux
       goarch: ppc64le
+      ids:
+        - otelcol-contrib
       dockerfile: distributions/otelcol-contrib/Dockerfile
       image_templates:
         - otel/opentelemetry-collector-contrib:{{ .Version }}-ppc64le
@@ -350,6 +372,8 @@ dockers:
       use: buildx
     - goos: linux
       goarch: s390x
+      ids:
+        - otelcol-contrib
       dockerfile: distributions/otelcol-contrib/Dockerfile
       image_templates:
         - otel/opentelemetry-collector-contrib:{{ .Version }}-s390x
