@@ -1,4 +1,4 @@
-name: Release
+name: Release Core
 
 on:
   push:
@@ -68,7 +68,7 @@ jobs:
         with:
           distribution: goreleaser-pro
           version: latest
-          args: release --clean --split --timeout 2h
+          args: release --clean --split --timeout 2h --id otelcol-contrib
         env:
           GOOS: ${{ matrix.GOOS }}
           GOARCH: ${{ matrix.GOARCH }}

@@ -5,13 +5,11 @@ on:
     branches: [main]
     paths:
     - ".goreleaser.yaml"
-    - "distributions/otelcol/manifest.yaml"
     - "distributions/otelcol-contrib/manifest.yaml"
   pull_request:
     branches: [main]
     paths:
     - ".goreleaser.yaml"
-    - "distributions/otelcol/manifest.yaml"
     - "distributions/otelcol-contrib/manifest.yaml"
 
 jobs:
@@ -64,7 +62,7 @@ jobs:
         with:
           distribution: goreleaser-pro
           version: latest
-          args: --snapshot --clean --skip-sign --skip-sbom --timeout 2h --split
+          args: --snapshot --clean --skip-sign --skip-sbom --timeout 2h --split --id otelcol-contrib
         env:
           GOOS: ${{ matrix.GOOS }}
           GOARCH: ${{ matrix.GOARCH }}
