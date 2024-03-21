@@ -31,7 +31,7 @@ import (
 const ArmArch = "arm"
 
 var (
-	ImagePrefixes = []string{"thelmuth34", "ghcr.io/TylerHelmuth/opentelemetry-collector-releases"}
+	ImagePrefixes = []string{"thelmuth34", "ghcr.io/tylerhelmuth/opentelemetry-collector-releases"}
 	Architectures = []string{"386", "amd64", "arm", "arm64", "ppc64le", "s390x"}
 	ArmVersions   = []string{"7"}
 )
