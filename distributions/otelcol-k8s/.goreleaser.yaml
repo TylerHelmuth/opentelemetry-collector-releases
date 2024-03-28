@@ -33,10 +33,10 @@ dockers:
     goarch: amd64
     dockerfile: Dockerfile
     image_templates:
-      - otel/opentelemetry-collector-k8s:{{ .Version }}-amd64
-      - otel/opentelemetry-collector-k8s:latest-amd64
-      - ghcr.io/open-telemetry/opentelemetry-collector-releases/opentelemetry-collector-k8s:{{ .Version }}-amd64
-      - ghcr.io/open-telemetry/opentelemetry-collector-releases/opentelemetry-collector-k8s:latest-amd64
+      - thelmuth34/opentelemetry-collector-k8s:{{ .Version }}-amd64
+      - thelmuth34/opentelemetry-collector-k8s:latest-amd64
+      - ghcr.io/tylerhelmuth/opentelemetry-collector-releases/opentelemetry-collector-k8s:{{ .Version }}-amd64
+      - ghcr.io/tylerhelmuth/opentelemetry-collector-releases/opentelemetry-collector-k8s:latest-amd64
     extra_files:
       - config.yaml
     build_flag_templates:
@@ -52,10 +52,10 @@ dockers:
     goarch: arm64
     dockerfile: Dockerfile
     image_templates:
-      - otel/opentelemetry-collector-k8s:{{ .Version }}-arm64
-      - otel/opentelemetry-collector-k8s:latest-arm64
-      - ghcr.io/open-telemetry/opentelemetry-collector-releases/opentelemetry-collector-k8s:{{ .Version }}-arm64
-      - ghcr.io/open-telemetry/opentelemetry-collector-releases/opentelemetry-collector-k8s:latest-arm64
+      - thelmuth34/opentelemetry-collector-k8s:{{ .Version }}-arm64
+      - thelmuth34/opentelemetry-collector-k8s:latest-arm64
+      - ghcr.io/tylerhelmuth/opentelemetry-collector-releases/opentelemetry-collector-k8s:{{ .Version }}-arm64
+      - ghcr.io/tylerhelmuth/opentelemetry-collector-releases/opentelemetry-collector-k8s:latest-arm64
     extra_files:
       - config.yaml
     build_flag_templates:
@@ -71,10 +71,10 @@ dockers:
     goarch: ppc64le
     dockerfile: Dockerfile
     image_templates:
-      - otel/opentelemetry-collector-k8s:{{ .Version }}-ppc64le
-      - otel/opentelemetry-collector-k8s:latest-ppc64le
-      - ghcr.io/open-telemetry/opentelemetry-collector-releases/opentelemetry-collector-k8s:{{ .Version }}-ppc64le
-      - ghcr.io/open-telemetry/opentelemetry-collector-releases/opentelemetry-collector-k8s:latest-ppc64le
+      - thelmuth34/opentelemetry-collector-k8s:{{ .Version }}-ppc64le
+      - thelmuth34/opentelemetry-collector-k8s:latest-ppc64le
+      - ghcr.io/tylerhelmuth/opentelemetry-collector-releases/opentelemetry-collector-k8s:{{ .Version }}-ppc64le
+      - ghcr.io/tylerhelmuth/opentelemetry-collector-releases/opentelemetry-collector-k8s:latest-ppc64le
     extra_files:
       - config.yaml
     build_flag_templates:
@@ -90,10 +90,10 @@ dockers:
     goarch: s390x
     dockerfile: Dockerfile
     image_templates:
-      - otel/opentelemetry-collector-k8s:{{ .Version }}-s390x
-      - otel/opentelemetry-collector-k8s:latest-s390x
-      - ghcr.io/open-telemetry/opentelemetry-collector-releases/opentelemetry-collector-k8s:{{ .Version }}-s390x
-      - ghcr.io/open-telemetry/opentelemetry-collector-releases/opentelemetry-collector-k8s:latest-s390x
+      - thelmuth34/opentelemetry-collector-k8s:{{ .Version }}-s390x
+      - thelmuth34/opentelemetry-collector-k8s:latest-s390x
+      - ghcr.io/tylerhelmuth/opentelemetry-collector-releases/opentelemetry-collector-k8s:{{ .Version }}-s390x
+      - ghcr.io/tylerhelmuth/opentelemetry-collector-releases/opentelemetry-collector-k8s:latest-s390x
     extra_files:
       - config.yaml
     build_flag_templates:
@@ -106,30 +106,30 @@ dockers:
       - --label=org.opencontainers.image.source={{.GitURL}}
     use: buildx
 docker_manifests:
-  - name_template: otel/opentelemetry-collector-k8s:{{ .Version }}
+  - name_template: thelmuth34/opentelemetry-collector-k8s:{{ .Version }}
     image_templates:
-      - otel/opentelemetry-collector-k8s:{{ .Version }}-amd64
-      - otel/opentelemetry-collector-k8s:{{ .Version }}-arm64
-      - otel/opentelemetry-collector-k8s:{{ .Version }}-ppc64le
-      - otel/opentelemetry-collector-k8s:{{ .Version }}-s390x
-  - name_template: otel/opentelemetry-collector-k8s:latest
+      - thelmuth34/opentelemetry-collector-k8s:{{ .Version }}-amd64
+      - thelmuth34/opentelemetry-collector-k8s:{{ .Version }}-arm64
+      - thelmuth34/opentelemetry-collector-k8s:{{ .Version }}-ppc64le
+      - thelmuth34/opentelemetry-collector-k8s:{{ .Version }}-s390x
+  - name_template: thelmuth34/opentelemetry-collector-k8s:latest
     image_templates:
-      - otel/opentelemetry-collector-k8s:latest-amd64
-      - otel/opentelemetry-collector-k8s:latest-arm64
-      - otel/opentelemetry-collector-k8s:latest-ppc64le
-      - otel/opentelemetry-collector-k8s:latest-s390x
-  - name_template: ghcr.io/open-telemetry/opentelemetry-collector-releases/opentelemetry-collector-k8s:{{ .Version }}
+      - thelmuth34/opentelemetry-collector-k8s:latest-amd64
+      - thelmuth34/opentelemetry-collector-k8s:latest-arm64
+      - thelmuth34/opentelemetry-collector-k8s:latest-ppc64le
+      - thelmuth34/opentelemetry-collector-k8s:latest-s390x
+  - name_template: ghcr.io/tylerhelmuth/opentelemetry-collector-releases/opentelemetry-collector-k8s:{{ .Version }}
     image_templates:
-      - ghcr.io/open-telemetry/opentelemetry-collector-releases/opentelemetry-collector-k8s:{{ .Version }}-amd64
-      - ghcr.io/open-telemetry/opentelemetry-collector-releases/opentelemetry-collector-k8s:{{ .Version }}-arm64
-      - ghcr.io/open-telemetry/opentelemetry-collector-releases/opentelemetry-collector-k8s:{{ .Version }}-ppc64le
-      - ghcr.io/open-telemetry/opentelemetry-collector-releases/opentelemetry-collector-k8s:{{ .Version }}-s390x
-  - name_template: ghcr.io/open-telemetry/opentelemetry-collector-releases/opentelemetry-collector-k8s:latest
+      - ghcr.io/tylerhelmuth/opentelemetry-collector-releases/opentelemetry-collector-k8s:{{ .Version }}-amd64
+      - ghcr.io/tylerhelmuth/opentelemetry-collector-releases/opentelemetry-collector-k8s:{{ .Version }}-arm64
+      - ghcr.io/tylerhelmuth/opentelemetry-collector-releases/opentelemetry-collector-k8s:{{ .Version }}-ppc64le
+      - ghcr.io/tylerhelmuth/opentelemetry-collector-releases/opentelemetry-collector-k8s:{{ .Version }}-s390x
+  - name_template: ghcr.io/tylerhelmuth/opentelemetry-collector-releases/opentelemetry-collector-k8s:latest
     image_templates:
-      - ghcr.io/open-telemetry/opentelemetry-collector-releases/opentelemetry-collector-k8s:latest-amd64
-      - ghcr.io/open-telemetry/opentelemetry-collector-releases/opentelemetry-collector-k8s:latest-arm64
-      - ghcr.io/open-telemetry/opentelemetry-collector-releases/opentelemetry-collector-k8s:latest-ppc64le
-      - ghcr.io/open-telemetry/opentelemetry-collector-releases/opentelemetry-collector-k8s:latest-s390x
+      - ghcr.io/tylerhelmuth/opentelemetry-collector-releases/opentelemetry-collector-k8s:latest-amd64
+      - ghcr.io/tylerhelmuth/opentelemetry-collector-releases/opentelemetry-collector-k8s:latest-arm64
+      - ghcr.io/tylerhelmuth/opentelemetry-collector-releases/opentelemetry-collector-k8s:latest-ppc64le
+      - ghcr.io/tylerhelmuth/opentelemetry-collector-releases/opentelemetry-collector-k8s:latest-s390x
 signs:
   - cmd: cosign
     args:
